@@ -6,8 +6,9 @@ describe('app routes', () => {
     const response = await request(server)
       .get('/');
     
-    expect(response.body).toEqual('hi');
+    expect(response.text).toEqual('hi');
   });
+
   it('responds with echo', async() => {
     const response = await request(server)
       .post('/echo')
@@ -28,7 +29,7 @@ describe('app routes', () => {
     const response = await request(server)
       .get('/blue');
 
-    expect(response.text).toEqual('<hi>blue</hi>');
+    expect(response.text).toEqual('<h1>blue</h1>');
   });
 
   it('responds with green', async() => {
